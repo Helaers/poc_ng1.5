@@ -1,1 +1,23 @@
-<h2>{{vm.title}}</h2>
+<section class="viewer">
+    <header class="viewer__header">
+        <h1 class="header__title">
+            <img class="header__label" src="../../assets/images/bordles-header-label.png" /> Getallen en getalpatronen
+        </h1>
+        <div class="header__buttons">
+            <a class="header__button--overview" ng-click="vm.toggleCarrousel()"></a>
+            <!--<a class="header__button&#45;&#45;bordboek" [routerLink]="['/home']"></a>-->
+            <a class="header__button--bordboek" ui-sref="home"></a>
+        </div>
+    </header>
+    <div class="slide-container">
+        <!--<router-outlet></router-outlet>-->
+    </div>
+    <div class="viewer__page">
+        <span class="viewer__page--current">{{vm.currentSlide}}</span> / {{vm.totalSlides}}
+    </div>
+
+    <!--<carrousel [slides]="slides" [showCarrousel]="carrousel" (closeCarrousel)="getCarrouselState($event)" (sendSlideId)="getCurrentSlide($event)"></carrousel>-->
+</section>
+
+<!--<wheel [current]="currentSlide" [total]="totalSlides" (sendSlideId)="getCurrentSlide($event)"></wheel>-->
+<wheel></wheel>

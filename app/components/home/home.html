@@ -1,7 +1,8 @@
-<h2>{{vm.title}}</h2>
-<p>Angular test: {{1 + 1 === 2}}</p>
-<sample-dir></sample-dir>
-
-<button ui-sref="viewer">go to viewer</button>
-
-<wheel current="2" total="15" slide-id="2"></wheel>
+<div class="home-wrapper">
+    <div class="home__bordboek-wrapper">
+        <img class="home__bordboek" src="../../assets/images/bordboek.png" />
+        <!--<button class="home_btn-bordles" [routerLink]="['/viewer/slide/1']"></button>-->
+        <button class="home_btn-bordles" ui-sref="viewer"></button>
+    </div>
+    <wheel></wheel>
+</div>
