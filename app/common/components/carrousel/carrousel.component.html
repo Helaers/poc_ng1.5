@@ -1,0 +1,14 @@
+<section class="carrousel" ng-class="vm.showCarrousel ? 'active':''">
+    <button class="carrousel__prev" ng-click="vm.prev()"></button>
+    <div class="carrousel__overflow">
+        <div class="carrousel__container" ng-style="vm.carrouselStyle">
+            <div class="carrousel__thumb" ng-repeat="slide in vm.slides">
+                <span class="carrousel__number">{{slide.id}}</span>
+                <img class="carrousel__image" ng-src="slide.thumb" ng-click="vm.goToSlide(slide)" ng-class="{'disabled':!slide.visible}" />
+            </div>
+        </div>
+    </div>
+    <button class="carrousel__next" ng-click="vm.next()"></button>
+
+    <a class="carrousel__close" ng-click="vm.close()"></a>
+</section>

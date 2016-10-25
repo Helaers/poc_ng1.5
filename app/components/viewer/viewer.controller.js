@@ -6,6 +6,7 @@ function ViewerController($log, toaster, slidesService) {
 
     // variables
     vm.title = 'This is viewer';
+    vm.showCarrousel = false;
 
     vm.currentSlide = 0; // deze id zou ik van de slide.component moeten halen -- hoe? /
     vm.totalSlides = 4;
@@ -22,11 +23,11 @@ function ViewerController($log, toaster, slidesService) {
     function activate() {
         toaster.pop('success', 'title', 'viewer text in box');
         vm.slides = slidesService.getAll();
-        $log.log('slides here: ', vm.slides);
+
     }
 
     function toggleCarrousel() {
-        $log.log('this is the carrousel');
+        vm.showCarrousel = !vm.showCarrousel;
     }
 
 }
