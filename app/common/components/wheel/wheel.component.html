@@ -1,0 +1,12 @@
+<div draggable style="position:absolute" class="wheel-container">
+    <div class="wheel__expanded" ng-if="vm.expanded">
+        <div class="wheel__pen-dropdown" ng-if="vm.showPenDropdown"></div>
+        <div class="wheel__answers-dropdown" ng-if="vm.showAnswersDropdown"></div>
+        <a class="wheel__pen" ng-click="vm.togglePen()"></a>
+        <a class="wheel__answers"  ng-click="vm.toggleAnswers()"></a>
+    </div>
+    <div class="wheel__basic" ng-if="!vm.expanded"></div>
+    <a class="wheel__arrow prev" ng-click="vm.prevSlide()"></a>
+    <a class="wheel__arrow next"  ng-click="vm.nextSlide()"></a>
+    <a class="wheel__icon-min-max" ng-click="vm.toggleExpandedView()"></a>
+</div>
