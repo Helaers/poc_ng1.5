@@ -2,6 +2,8 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import modelFactory from 'angular-model-factory';
 import toaster from 'angularjs-toaster';
+import ngSanitize from 'angular-sanitize';
+// var ngSanitize = require('angular-sanitize');
 
 // styles
 import './app.scss';
@@ -17,6 +19,7 @@ export default angular
         uiRouter,
         modelFactory.name,
         toaster,
+        ngSanitize,
 
         // application
         components,

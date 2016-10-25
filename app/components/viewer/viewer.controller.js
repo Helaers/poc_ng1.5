@@ -1,6 +1,6 @@
 //controller
-ViewerController.$inject = ['$log', 'toaster'];
-function ViewerController($log, toaster) {
+ViewerController.$inject = ['$log', 'toaster', 'slidesService'];
+function ViewerController($log, toaster, slidesService) {
 
     const vm = this;
 
@@ -9,6 +9,8 @@ function ViewerController($log, toaster) {
 
     vm.currentSlide = 0; // deze id zou ik van de slide.component moeten halen -- hoe? /
     vm.totalSlides = 4;
+
+    vm.slides = [];
 
     vm.toggleCarrousel = toggleCarrousel;
 
@@ -19,6 +21,8 @@ function ViewerController($log, toaster) {
 
     function activate() {
         toaster.pop('success', 'title', 'viewer text in box');
+        vm.slides = slidesService.getAll();
+        $log.log('slides here: ', vm.slides);
     }
 
     function toggleCarrousel() {
