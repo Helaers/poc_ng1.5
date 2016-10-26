@@ -27,7 +27,6 @@ function wheelComponentController($log, slidesService, $state) {
     /////////
 
     function activate() {
-        $log.log('this is the wheel');
         //throw new Error('this is a test error');
     }
 
@@ -47,13 +46,10 @@ function wheelComponentController($log, slidesService, $state) {
 
 
     function nextSlide() {
-        $log.log('next slide', vm.current, vm.total);
-
         if (vm.current < vm.total) {
             vm.current = vm.current + 1;
 
             const slide = slidesService.getSlide(vm.current);
-            $log.log('slide: ', slide);
 
             if (slide.visible) {
                 // TODO send current slide to VIEWER
@@ -65,8 +61,6 @@ function wheelComponentController($log, slidesService, $state) {
     }
 
     function prevSlide() {
-        $log.log('prev slide', vm.current, vm.total);
-
         if (vm.current > 1) {
             vm.current = vm.current - 1;
 

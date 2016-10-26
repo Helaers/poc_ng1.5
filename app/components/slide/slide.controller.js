@@ -17,11 +17,9 @@ function SlideController($log, toaster, slidesService, $location, $scope) {
     /////////
 
     function activate() {
-        $log.log('this is the slide controller');
         //Get ID out of current URL
         const currentId = getSlideFromUrl();
         vm.slide = slidesService.getSlide(currentId);
-        $log.log('slide with id: ', currentId, vm.slide);
         $scope.$emit('currentSlideID', vm.slide.id);
     }
 

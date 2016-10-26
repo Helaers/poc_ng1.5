@@ -21,7 +21,7 @@ function ViewerController($log, toaster, slidesService, $location, $scope) {
 
     /////////
 
-    $scope.$on('currentSlideID', function(event, data) {
+    $scope.$on('currentSlideID', (event, data) => {
         vm.currentSlide = data;
     });
 
