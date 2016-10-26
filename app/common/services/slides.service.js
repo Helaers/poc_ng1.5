@@ -1,10 +1,10 @@
 export default class SlidesService {
     constructor() {
         this.SLIDES = [
-            { id: 1, html: ["<img class='slide__image' src='./assets/images/slide1.png' />"], thumb: '../../../assets/images/thumb1.png', visible: true },
-            { id: 2, html: ["<img class='slide__image' src='./assets/images/slide2.png' />"], thumb: '../../../assets/images/thumb2.png', visible: true },
-            { id: 3, html: ["<img class='slide__image' src='./assets/images/slide3.png' />"], thumb: '../../../assets/images/thumb3.png', visible: true },
-            { id: 4, html: ["<img class='slide__image' src='./assets/images/slide4.png' />"], thumb: '../../../assets/images/thumb4.png', visible: true },
+            { id: 1, html: ["<img class='slide__image' src='../../../assets/images/slide1.png' />"], thumb: '../../../assets/images/thumb1.png', visible: true },
+            { id: 2, html: ["<img class='slide__image' src='../../../assets/images/slide2.png' />"], thumb: '../../../assets/images/thumb2.png', visible: true },
+            { id: 3, html: ["<img class='slide__image' src='../../../assets/images/slide3.png' />"], thumb: '../../../assets/images/thumb3.png', visible: true },
+            { id: 4, html: ["<img class='slide__image' src='../../../assets/images/slide4.png' />"], thumb: '../../../assets/images/thumb4.png', visible: true },
             {
                 id: 5,
                 html: [
@@ -17,8 +17,8 @@ export default class SlidesService {
                 thumb: '../../../assets/images/thumb5.png',
                 visible: true,
             },
-            { id: 6, html: ["<img class='slide__image' src='./assets/images/slide6.png' />"], thumb: '../../../assets/images/thumb6.png', visible: true },
-            { id: 7, html: ["<img class='slide__image' src='./assets/images/slide7.png' />"], thumb: '../../../assets/images/thumb7.png', visible: true },
+            { id: 6, html: ["<img class='slide__image' src='../../../assets/images/slide6.png' />"], thumb: '../../../assets/images/thumb6.png', visible: true },
+            { id: 7, html: ["<img class='slide__image' src='../../../assets/images/slide7.png' />"], thumb: '../../../assets/images/thumb7.png', visible: true },
         ];
     }
 

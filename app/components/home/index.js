@@ -27,6 +27,11 @@ module.config(['$stateProvider', ($stateProvider) => {
             controller: viewerController,
             controllerAs: 'vm',
         });
+        // .state('viewer.slide', {
+        //     url: '/slide/:id',
+        //     title: 'Slide',
+        //     component: 'slide',
+        // });
 }]);
 
 module.controller('HomeController', homeController);

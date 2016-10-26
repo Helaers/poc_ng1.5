@@ -10,6 +10,7 @@
     </header>
     <div class="slide-container">
         <!--<router-outlet></router-outlet>-->
+        <div ui-view></div>
     </div>
     <div class="viewer__page">
         <span class="viewer__page--current">{{vm.currentSlide}}</span> / {{vm.totalSlides}}
@@ -20,4 +21,4 @@
 </section>
 
 <!--<wheel [current]="currentSlide" [total]="totalSlides" (sendSlideId)="getCurrentSlide($event)"></wheel>-->
-<wheel></wheel>
+<wheel current="vm.currentSlide" total="vm.totalSlides"></wheel>

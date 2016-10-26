@@ -5,8 +5,8 @@ import template from './wheel.component.html';
 import './wheel.component.scss';
 
 // Controller
-wheelComponentController.$inject = ['$log'];
-function wheelComponentController($log) {
+wheelComponentController.$inject = ['$log', 'slidesService', '$state'];
+function wheelComponentController($log, slidesService, $state) {
 
     const vm = this;
 
@@ -47,11 +47,37 @@ function wheelComponentController($log) {
 
 
     function nextSlide() {
-        $log.log('next slide');
+        $log.log('next slide', vm.current, vm.total);
+
+        if (vm.current < vm.total) {
+            vm.current += vm.current;
+
+            const slide = slidesService.getSlide(vm.current);
+            $log.log('slide: ', slide);
+
+            if (slide.visible) {
+                // TODO send current slide to VIEWER
+                $state.go('viewer.slide', { id: vm.current });
+            } else {
+                nextSlide();
+            }
+        }
     }
 
     function prevSlide() {
         $log.log('prev slide');
+
+        if (vm.current > 1) {
+            vm.current -= vm.current;
+
+            const slide = slidesService.getSlide(vm.current);
+            if (slide.visible) {
+                // TODO send current slide to VIEWER
+                $state.go('viewer.slide', { id: vm.current });
+            } else {
+                prevSlide();
+            }
+        }
     }
 
 

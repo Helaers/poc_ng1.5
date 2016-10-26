@@ -56,7 +56,7 @@ function carrouselComponentController() {
     function prev() {
         if (index > 0) {
             index -= 1;
-            const value = index * widthThumb *3; // hardcoded x3
+            const value = index * widthThumb * 3; // hardcoded x3
             vm.carrouselStyle.marginLeft = `${value}px`;
             //checkButtons();
         }
@@ -65,7 +65,7 @@ function carrouselComponentController() {
     function next() {
         if (index < totalSlides - thumbsToShow) {
             index += 1;
-            const value = index * widthThumb *3;
+            const value = index * widthThumb * 3;
             vm.carrouselStyle.marginLeft = `${value}px`;
             //checkButtons();
         }
