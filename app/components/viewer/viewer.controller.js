@@ -1,6 +1,6 @@
 //controller
-ViewerController.$inject = ['$log', 'toaster', 'slidesService', '$location'];
-function ViewerController($log, toaster, slidesService, $location) {
+ViewerController.$inject = ['$log', 'toaster', 'slidesService', '$location', '$scope'];
+function ViewerController($log, toaster, slidesService, $location, $scope) {
 
     const vm = this;
 
@@ -20,6 +20,10 @@ function ViewerController($log, toaster, slidesService, $location) {
     activate();
 
     /////////
+
+    $scope.$on('currentSlideID', function(event, data) {
+        vm.currentSlide = data;
+    });
 
     function activate() {
         toaster.pop('success', 'title', 'viewer text in box');

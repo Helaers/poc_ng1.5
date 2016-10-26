@@ -1,6 +1,6 @@
 //controller
-SlideController.$inject = ['$log', 'toaster', 'slidesService', '$location'];
-function SlideController($log, toaster, slidesService, $location) {
+SlideController.$inject = ['$log', 'toaster', 'slidesService', '$location', '$scope'];
+function SlideController($log, toaster, slidesService, $location, $scope) {
 
     const vm = this;
 
@@ -22,6 +22,7 @@ function SlideController($log, toaster, slidesService, $location) {
         const currentId = getSlideFromUrl();
         vm.slide = slidesService.getSlide(currentId);
         $log.log('slide with id: ', currentId, vm.slide);
+        $scope.$emit('currentSlideID', vm.slide.id);
     }
 
     function getSlideFromUrl() {
