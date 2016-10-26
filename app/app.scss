@@ -18,44 +18,6 @@ button, a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.slide__image {
-  display: inline-block;
-  width: 100%;
-}
-
-.slide__label--draggable {
-  font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  padding: 8px 11px;
-  font-weight: bold;
-  cursor: move;
-  background-color: #fff;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.28);
-  top: 96px;
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-}
-.slide__label--draggable:active {
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-}
-
-.slide__label--draggable.one {
-  left: 170px;
-}
-.slide__label--draggable.two {
-  left: 295px;
-}
-.slide__label--draggable.three {
-  left: 428px;
-}
-.slide__label--draggable.four {
-  left: 560px;
-}
-.slide__label--draggable.five {
-  left: 688px;
-}
-
 
 /* ------------------------------------------------
   Dragula styles: don't load in package - why?

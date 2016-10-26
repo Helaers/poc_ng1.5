@@ -9,11 +9,11 @@ export default class SlidesService {
                 id: 5,
                 html: [
                     "<img class='slide__image' src='../../../assets/images/slide5.png' />" +
-                    "<div style='position:absolute' class='slide__label--draggable one'>81 338</div>" +
-                    "<div style='position:absolute' class='slide__label--draggable two'>100 000</div>" +
-                    "<div style='position:absolute' class='slide__label--draggable three'>87 307</div>" +
-                    "<div style='position:absolute' class='slide__label--draggable four'>7 030</div>" +
-                    "<div style='position:absolute' class='slide__label--draggable five'>72 166</div>"],
+                    "<div draggable style='position:absolute' class='slide__label--draggable one'>81 338</div>" +
+                    "<div draggable style='position:absolute' class='slide__label--draggable two'>100 000</div>" +
+                    "<div draggable style='position:absolute' class='slide__label--draggable three'>87 307</div>" +
+                    "<div draggable style='position:absolute' class='slide__label--draggable four'>7 030</div>" +
+                    "<div draggable style='position:absolute' class='slide__label--draggable five'>72 166</div>"],
                 thumb: '../../../assets/images/thumb5.png',
                 visible: true,
             },
