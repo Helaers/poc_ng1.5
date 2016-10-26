@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:html": "find ./app -name '*.html' -print0 | cpio -pmd0 ./dist",
-    "build:js": "webpack -p --config webpack.config.prod.js",
-    "build": "npm run clean && npm run build:js && npm run build:html",
+    "build": "webpack -p --config webpack.config.prod.js",
     "serve": "webpack-dev-server --content-base app --hot",
     "test": "karma start",
     "test-single": "karma start --single-run",

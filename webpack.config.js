@@ -56,7 +56,8 @@ const config = {
         }),
         // styles from initial chunks into separate css output file
         new ExtractTextPlugin('bundle.css'),
-    ]
+    ],
+    devtool: "#inline-source-map",
 };
 
 
