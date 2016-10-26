@@ -4,7 +4,7 @@
         <div class="carrousel__container" ng-style="vm.carrouselStyle">
             <div class="carrousel__thumb" ng-repeat="slide in vm.slides">
                 <span class="carrousel__number">{{slide.id}}</span>
-                <img class="carrousel__image" ng-src="slide.thumb" ng-click="vm.goToSlide(slide)" ng-class="{'disabled':!slide.visible}" />
+                <img class="carrousel__image" ng-src="{{slide.thumb}}" ng-click="vm.goToSlide(slide)" ng-class="{'disabled':!slide.visible}" />
             </div>
         </div>
     </div>

@@ -5,6 +5,9 @@ import homeController from './home.controller';
 import viewerController from '../viewer/viewer.controller';
 import './home.scss';
 
+import slideTemplate from '../../common/components/slide/slide.component.html';
+import slideController from '../../common/components/slide/slide.component';
+
 const module = angular.module('digibw.components.home', [
     uiRouter,
 ]);
@@ -26,12 +29,18 @@ module.config(['$stateProvider', ($stateProvider) => {
             templateUrl: './components/viewer/viewer.html',
             controller: viewerController,
             controllerAs: 'vm',
+        })
+        .state('viewer.slide', {
+            url: '/slide/:id',
+            title: 'Slide',
+            component: 'slide',
+            views: {
+                slides: {
+                    template: slideTemplate,
+                    controller: slideController,
+                },
+            },
         });
-        // .state('viewer.slide', {
-        //     url: '/slide/:id',
-        //     title: 'Slide',
-        //     component: 'slide',
-        // });
 }]);
 
 module.controller('HomeController', homeController);

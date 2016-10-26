@@ -5,8 +5,8 @@ import template from './carrousel.component.html';
 import './carrousel.component.scss';
 
 // Controller
-carrouselComponentController.$inject = [];
-function carrouselComponentController() {
+carrouselComponentController.$inject = ['$state'];
+function carrouselComponentController($state) {
 
     const vm = this;
 
@@ -84,6 +84,7 @@ function carrouselComponentController() {
         }
         // this.router.navigate(['/viewer/slide', slide.id]);
         // this.sendSlideId.emit(slide.id);
+        $state.go('viewer.slide', { id: slide.id });
         close();
     }
 

@@ -5,20 +5,30 @@ import template from './slide.component.html';
 import './slide.component.scss';
 
 // Controller
-slideComponentController.$inject = ['$log', '$stateParams', 'slidesService'];
-function slideComponentController($log, $stateParams, slidesService) {
+slideComponentController.$inject = ['$log', '$location', 'slidesService'];
+function slideComponentController($log, $location, slidesService) {
 
     const vm = this;
 
     // variables
     vm.slide = {
-        'id' : 0,
-        'title': 'Slide title'
+        id: 0,
+        title: 'Slide title',
     };
 
     activate();
 
     /////////
+
+    // vm.$onInit = function () {
+    //     const currentId = getSlideFromUrl();
+    //     vm.slide = slidesService.getSlide(currentId);
+    //     $log.log('slide with id: ', currentId);
+    // };
+    //
+    // vm.$onChanges = function (changesObj) {
+    //     $log.log('show changes: ', changesObj);
+    // };
 
     function activate() {
         $log.log('this is the slide component');
@@ -28,14 +38,22 @@ function slideComponentController($log, $stateParams, slidesService) {
         //     let id = +params['id'];
         //     this.slide = this.slidesService.getSlide(id);
         //
-        //     this.slidesService.currentSlide = this.slide['id']; // can't use this.slide.id ??? -- Property 'id' does not exist on type 'Object'
+        //     this.slidesService.currentSlide = this.slide['id']; // can't use this.slide.id ??? --
+        // Property 'id' does not exist on type 'Object'
         //     //console.log('current slide in SLIDE:' ,this.slidesService.currentSlide)
         // });
 
         //Get ID out of current URL
-        const currentId = $stateParams.id;
-        vm.slide = slidesService.getSlide(id);
+        const currentId = getSlideFromUrl();
+        vm.slide = slidesService.getSlide(currentId);
         $log.log('slide with id: ', currentId);
+    }
+
+
+    function getSlideFromUrl() {
+        const url = $location.path();
+        const index = url.lastIndexOf('/');
+        return +url.substr(index + 1);
     }
 
 }

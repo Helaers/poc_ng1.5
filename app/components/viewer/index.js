@@ -8,16 +8,6 @@ const module = angular.module('digibw.components.viewer', [
     uiRouter,
 ]);
 
-
-module.config(['$stateProvider', ($stateProvider) => {
-    $stateProvider
-        .state('viewer.slide', {
-            url: '/slide/:id',
-            title: 'Slide',
-            component: 'slide',
-        });
-}]);
-
 module.controller('ViewerController', viewerController);
 
 export default module.name;
