@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 
 import homeController from './home.controller';
 import viewerController from '../viewer/viewer.controller';
+import editorController from '../editor/editor.controller';
 import slideController from '../slide/slide.controller';
 import './home.scss';
 //
@@ -23,6 +24,13 @@ module.config(['$stateProvider', ($stateProvider) => {
             controller: homeController,
             controllerAs: 'vm',
             //role: ['admin', 'publisher', 'editor'],
+        })
+        .state('editor', {
+            url: '/editor',
+            title: 'Editor',
+            templateUrl: './components/editor/editor.html',
+            controller: editorController,
+            controllerAs: 'vm',
         })
         .state('viewer', {
             url: '/viewer',

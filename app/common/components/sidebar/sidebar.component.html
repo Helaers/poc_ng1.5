@@ -2,8 +2,7 @@
     <div class="sidebar__tools">
         <img class="sidebar__tools-date--dropdown" src="../../../assets/images/sidebar-date-left.png" ng-if="showDate" />
         <a class="sidebar__tools-date" ng-click="showDate = !showDate"></a>
-        <!--<a href class="sidebar__tools-bordles-editor" [routerLink]="['/editor']"></a>-->
-        <a href class="sidebar__tools-bordles-editor"></a>
+        <a href class="sidebar__tools-bordles-editor" ui-sref="editor"></a>
     </div>
     <div class="sidebar__toggle sidebar__toggle--left" ng-click="vm.toggleLeftSidebar()">
         <img class="sidebar__toggle-icon left" ng-class="{'slideSidebar': vm.showLeftSidebar}" src="../../../assets/images/sidebar-toggle-arrow.png" />
@@ -12,8 +11,7 @@
 
 <section class="sidebar sidebar--right" ng-class="{'slideSidebar': vm.showRightSidebar}">
     <div class="sidebar__tools">
-        <!--<a href class="sidebar__tools-bordles-editor" [routerLink]="['/editor']"></a>-->
-        <a href class="sidebar__tools-bordles-editor"></a>
+        <a href class="sidebar__tools-bordles-editor" ui-sref="editor"></a>
     </div>
     <div class="sidebar__toggle sidebar__toggle--right" ng-click="vm.toggleRightSidebar()">
         <img class="sidebar__toggle-icon right" ng-class="{'slideSidebar': vm.showRightSidebar}" src="../../../assets/images/sidebar-toggle-arrow.png" />

@@ -8,7 +8,7 @@ function ViewerController($log, toaster, slidesService, $location, $scope) {
     vm.title = 'This is viewer';
     vm.showCarrousel = false;
 
-    vm.currentSlide = 1; // deze id zou ik van de slide.component moeten halen -- hoe? /
+    vm.currentSlide = 1;
     vm.totalSlides = 4;
 
     vm.slides = [];

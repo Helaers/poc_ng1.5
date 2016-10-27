@@ -1,13 +1,15 @@
 import angular from 'angular';
 
+import editor from './editor';
 import home from './home';
-import viewer from './viewer';
 import slide from './slide';
+import viewer from './viewer';
 
 const module = angular.module('digibw.components', [
+    editor,
     home,
-    viewer,
     slide,
+    viewer,
 ]);
 
 export default module.name;
