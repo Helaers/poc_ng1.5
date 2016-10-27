@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
+import addSlideController from '../addSlide/addSlide.controller';
 import homeController from './home.controller';
 import viewerController from '../viewer/viewer.controller';
 import editorController from '../editor/editor.controller';
@@ -30,6 +31,13 @@ module.config(['$stateProvider', ($stateProvider) => {
             title: 'Editor',
             templateUrl: './components/editor/editor.html',
             controller: editorController,
+            controllerAs: 'vm',
+        })
+        .state('addslide', {
+            url: '/editor/addslide',
+            title: 'Addslide',
+            templateUrl: './components/addSlide/addSlide.html',
+            controller: addSlideController,
             controllerAs: 'vm',
         })
         .state('viewer', {

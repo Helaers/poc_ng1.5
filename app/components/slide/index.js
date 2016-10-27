@@ -3,7 +3,7 @@ import angular from 'angular';
 import slideController from './slide.controller';
 import './slide.scss';
 
-const module = angular.module('digibw.components.viewer', [
+const module = angular.module('digibw.components.slide', [
 
 ]);
 

@@ -4,7 +4,7 @@ import editorController from './editor.controller';
 import './editor.scss';
 
 
-const module = angular.module('digibw.components.home', [
+const module = angular.module('digibw.components.editor', [
 ]);
 
 

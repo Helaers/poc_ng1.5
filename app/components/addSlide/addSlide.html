@@ -1,0 +1,61 @@
+<section class="editor">
+    <header class="editor-header">
+        <h1 class="editor-header__title">
+            <img class="editor-header__label" src="../../assets/images/editor-header-label.png" /> Getallen en getalpatronen
+        </h1>
+        <div class="editor-header__buttons">
+            <a class="editor-header__button--overview" ui-sref="editor"></a>
+            <a class="editor-header__button--bordboek" ui-sref="home"></a>
+        </div>
+    </header>
+    <div class="editor-subheader">
+        <h2 class="editor-subheader__title">Scherm toevoegen</h2>
+    </div>
+    <section class="editor-body">
+        <div class="add-slide__container">
+            <h2 class="add-slide__title"><span class="add-slide__number">{{vm.id}}</span>Klik hier om een titel toe te voegen</h2>
+            <div class="add-slide">
+                <div class="add-slide__content">
+                    <img class="content__image" src="../../assets/images/input-text.png" ng-if="vm.textPreview && vm.type === 'previewText'" ng-click="vm.showSlideText()" />
+                    <img class="content__image" src="../../assets/images/slide9.png" ng-if="vm.textSlide && vm.type === 'text'" />
+
+                    <img class="content__image" src="../../assets/images/slide8.png" ng-if="vm.type === 'video'" />
+                    <img class="content__image" src="../../assets/images/slide10.png" ng-if="vm.type === 'image'" />
+                    <img class="content__image" src="../../assets/images/slide11.png" ng-if="vm.type === 'audio'" />
+                    <img class="content__image" src="../../assets/images/slide12.png" ng-if="vm.type === 'link'" />
+                    <img class="content__image" src="../../assets/images/slide13.png" ng-if="vm.type === 'bingel'" />
+                </div>
+            </div>
+            <ul class="add-slide__button-bar">
+                <li class="button-bar__item">
+                    <a class="button_bar__button" ng-class="{'active':(vm.textPreview || vm.textSlide) && vm.type === 'text'}" ng-click="vm.showTextPreview()"><img class="button_bar__icon" src="../../assets/images/icn-text.png"></a>
+                </li>
+                <li ng-click="vm.openModal('image')" class="button-bar__item">
+                    <a class="button_bar__button" ng-class="{'active':type === 'image'}"><img class="button_bar__icon image" src="../../assets/images/icn-image.png"></a>
+                </li>
+                <li ng-click="vm.openModal('video')" class="button-bar__item">
+                    <a class="button_bar__button" ng-class="{'active':type === 'video'}"><img class="button_bar__icon video" src="../../assets/images/icn-video.png"></a>
+                </li>
+                <li ng-click="vm.openModal('audio')" class="button-bar__item">
+                    <a class="button_bar__button" ng-class="{'active':type === 'audio'}"><img class="button_bar__icon audio" src="../../assets/images/icn-audio.png"></a>
+                </li>
+                <li ng-click="vm.openModal('link')" class="button-bar__item">
+                    <a class="button_bar__button" ng-class="{'active':type === 'link'}"><img class="button_bar__icon link" src="../../assets/images/icn-link.png"></a>
+                </li>
+                <li ng-click="vm.openModal('bingel')" class="button-bar__item">
+                    <a class="button_bar__button" ng-class="{'active':type === 'bingel'}"><img class="button_bar__icon bingel" src="../../assets/images/icn-bingel.png"></a>
+                </li>
+                <li class="button-bar__item">
+                    <a class="button_bar__button red" ng-click="vm.clear()"><img class="button_bar__icon" src="../../assets/images/icn-trash.png"></a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    <footer class="add-slide-footer">
+        <button class="footer-button--ghost" ui-sref="editor">Annuleren</button>
+        <button class="footer-button" ng-click="vm.sendToOverview()">Opslaan</button>
+    </footer>
+</section>
+<wheel></wheel>
+<!--<modal (confirmModal)="confirmModal($event)" (closeModal)="closeModal()" [showModal]="showModal" [modalType]="modalType" [modalHeader]="modalHeader"></modal>-->
