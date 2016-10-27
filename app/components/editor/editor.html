@@ -14,7 +14,7 @@
 
     <section class="editor-body">
         <!--<ul class="editor__thumbnail-container" [dragula]='"slides-bag"' [dragulaModel]='slides'>-->
-        <ul class="editor__thumbnail-container">
+        <ul class="editor__thumbnail-container" dragula='"slides-bag"' dragula-model="vm.slides">
             <li class="editor__thumbnail" ng-repeat="slide in vm.slides">
                 <span class="thumbnail__number">{{slide.id}}</span>
                 <img class="thumbnail__image" ng-src="{{slide.thumb}}" ng-class="{'disabled':!slide.visible}" />

@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-dragula": "^1.2.8",
     "angular-model-factory": "^1.0.3",
     "angular-sanitize": "^1.5.8",
     "angular-ui-router": "^0.3.1",

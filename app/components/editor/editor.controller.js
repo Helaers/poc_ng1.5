@@ -1,6 +1,6 @@
 //controller
-EditorController.$inject = ['$log', 'toaster', 'slidesService'];
-function EditorController($log, toaster, slidesService) {
+EditorController.$inject = ['$log', '$scope', 'toaster', 'slidesService'];
+function EditorController($log, $scope, toaster, slidesService) {
 
     const vm = this;
 
@@ -18,6 +18,10 @@ function EditorController($log, toaster, slidesService) {
     activate();
 
     /////////
+
+    $scope.$on('slides-bag.drop-model', function () {
+        onDrop();
+    });
 
     function activate() {
         toaster.pop('success', 'title', 'editor here');
@@ -40,6 +44,12 @@ function EditorController($log, toaster, slidesService) {
         for (let i = 0; i < vm.slides.length; i++) {
             vm.slides[i].id = i + 1;
         }
+    }
+    
+    function onDrop() {
+        orderSlides();
+        // send to "backend"
+        slidesService.setSlides(vm.slides);
     }
 
 }
