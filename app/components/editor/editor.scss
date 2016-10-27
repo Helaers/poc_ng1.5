@@ -4,26 +4,26 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.editor__header,
-.editor__subheader,
-.editor__body {
+.editor-header,
+.editor-subheader,
+.editor-body {
   padding: 0 5%;
 }
 
-.editor__header{
+.editor-header{
   padding-top: 20px;
   box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 5;
 }
-.header__label {
+.editor-header__label {
   width: 31px;
   margin-top: 4px;
   display: inline-block;
   vertical-align: top;
   margin-right: 5px;
 }
-.header__title {
+.editor-header__title {
   font-weight: 300;
   text-transform: uppercase;
   font-size: 32px;
@@ -32,30 +32,30 @@
   display: inline-block;
 }
 @media (max-width: 850px) {
-  .header__title {
+  .editor-header__title {
     font-size: 25px;
   }
-  .header__label {
+  .editor-header__label {
     width: 25px;
     margin-top: 2px;
   }
 }
 
-.header__buttons {
+.editor-header__buttons {
   display: inline-block;
   vertical-align: middle;
   float: right;
   margin-top: 6px;
 }
 
-.header__button--bordboek,
-.header__button--addslide {
+.editor-header__button--bordboek,
+.editor-header__button--addslide {
   cursor: pointer;
   display: inline-block;
   height: 40px;
 }
 
-.header__button--addslide {
+.editor-header__button--addslide {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: #fff;
@@ -73,7 +73,7 @@
 
 }
 
-.header__button--addslide .add-icon {
+.editor-header__button--addslide .add-icon {
   color: inherit;
   font-size: 20px;
   display: inline-block;
@@ -81,15 +81,15 @@
   margin-right: 5px;
   margin-top: -3px;
 }
-.header__button--bordboek {
+.editor-header__button--bordboek {
   width: 40px;
   background: url('../../assets/images/btn-editor-home.png');
   background-size: 100%;
 }
 
 
-.editor__subheader,
-.editor__footer {
+.editor-subheader,
+.editor-footer {
   position: relative;
   z-index: 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aaa81b+0,8f8d16+100 */
@@ -99,13 +99,13 @@
   background: linear-gradient(45deg,  #aaa81b 0%,#8f8d16 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaa81b', endColorstr='#8f8d16',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-.subheader__title {
+.editor-subheader__title {
   display: inline-block;
   font-weight: 400;
   color: #fff;
 }
 
-.editor__footer {
+.editor-footer {
   position: fixed;
   width: 100%;
   height: 10px;
@@ -113,16 +113,16 @@
   margin-top: 40px;
 }
 
-.editor__body {
+.editor-body {
   /*min-height: 90%;*/
   /*margin-bottom: -10px; */
 }
-.editor__body:after {
+.editor-body:after {
   content: "";
   display: block;
 }
 
-.editor__footer, .editor__body:after {
+.editor-footer, .editor-body:after {
   height: 10px;
 }
 
