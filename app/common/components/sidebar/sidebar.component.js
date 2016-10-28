@@ -5,8 +5,8 @@ import template from './sidebar.component.html';
 import './sidebar.component.scss';
 
 // Controller
-sidebarComponentController.$inject = ['$log'];
-function sidebarComponentController($log) {
+sidebarComponentController.$inject = [];
+function sidebarComponentController() {
 
     const vm = this;
 
@@ -24,7 +24,6 @@ function sidebarComponentController($log) {
     /////////
 
     function activate() {
-        $log.log('this is the sidebar');
         //throw new Error('this is a test error');
     }
 

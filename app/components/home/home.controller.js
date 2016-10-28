@@ -1,6 +1,6 @@
 //controller
-HomeController.$inject = ['$log', 'toaster'];
-function HomeController($log, toaster) {
+HomeController.$inject = [];
+function HomeController() {
 
     const vm = this;
 
@@ -13,7 +13,8 @@ function HomeController($log, toaster) {
     /////////
 
     function activate() {
-        toaster.pop('success', 'title', 'text');
+        // add toaster dependency
+        // toaster.pop('success', 'Home page', 'This is the homepage');
     }
 
 }

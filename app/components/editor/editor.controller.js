@@ -19,13 +19,11 @@ function EditorController($log, $scope, toaster, slidesService) {
 
     /////////
 
-    $scope.$on('slides-bag.drop-model', function () {
+    $scope.$on('slides-bag.drop-model', () => {
         onDrop();
     });
 
     function activate() {
-        toaster.pop('success', 'title', 'editor here');
-
         vm.slides = slidesService.getAll();
         vm.totalSlides = vm.slides.length;
     }
@@ -41,9 +39,9 @@ function EditorController($log, $scope, toaster, slidesService) {
     }
 
     function orderSlides() {
-        for (let i = 0; i < vm.slides.length; i++) {
-            vm.slides[i].id = i + 1;
-        }
+        vm.slides.forEach((slide, index) => {
+            slide.id = index + 1;
+        });
     }
     
     function onDrop() {

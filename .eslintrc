@@ -25,5 +25,6 @@
     "no-trailing-spaces": [2, { "skipBlankLines": true }],
     "object-shorthand": [0],
     "import/prefer-default-export": [0],
+    "no-param-reassign": ["error", { "props": false }],
   }
 }

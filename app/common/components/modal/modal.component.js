@@ -12,8 +12,10 @@ function modalComponentController() {
 
     // variables
     vm.test = 'test';
-    // functions
 
+    // functions
+    vm.close = close;
+    vm.add = add;
 
     activate();
 
@@ -24,14 +26,27 @@ function modalComponentController() {
 
     }
 
+    function close() {
+        // this.closeModal.emit(this.showModal);
+        vm.showModal = false;
+    }
+
+    function add() {
+        // console.log(this.modalType)
+        // this.confirmModal.emit(this.modalType);
+        vm.confirmModal({ type: vm.modalType });
+        close();
+    }
 
 }
 
 // Component
 export const modalComponent = {
     bindings: {
-        slides: '<',
-        showCarrousel: '=',
+        showModal: '=',
+        modalHeader: '<',
+        modalType: '<',
+        confirmModal: '&',
     },
     template: template,
     controller: modalComponentController,

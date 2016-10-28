@@ -47,7 +47,7 @@ function wheelComponentController($log, slidesService, $state) {
 
     function nextSlide() {
         if (vm.current < vm.total) {
-            vm.current = vm.current + 1;
+            vm.current += 1;
 
             const slide = slidesService.getSlide(vm.current);
 
@@ -62,7 +62,7 @@ function wheelComponentController($log, slidesService, $state) {
 
     function prevSlide() {
         if (vm.current > 1) {
-            vm.current = vm.current - 1;
+            vm.current -= 1;
 
             const slide = slidesService.getSlide(vm.current);
             if (slide.visible) {

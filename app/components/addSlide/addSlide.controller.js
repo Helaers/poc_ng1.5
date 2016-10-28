@@ -1,6 +1,6 @@
 //controller
-AddSlideController.$inject = ['$log', '$scope', 'toaster', 'slidesService'];
-function AddSlideController($log, $scope, toaster, slidesService) {
+AddSlideController.$inject = ['$log', '$scope', 'toaster', 'slidesService', '$state'];
+function AddSlideController($log, $scope, toaster, slidesService, $state) {
 
     const vm = this;
 
@@ -33,7 +33,6 @@ function AddSlideController($log, $scope, toaster, slidesService) {
     /////////
 
     function activate() {
-        toaster.pop('success', 'title', 'add slide here');
         vm.slides = slidesService.getAll();
         vm.id = vm.slides.length + 1;
     }
@@ -58,11 +57,10 @@ function AddSlideController($log, $scope, toaster, slidesService) {
     }
 
     function sendToOverview() {
-        $log.log('type: ', vm.type);
         if (vm.type !== 'previewText' && vm.type !== '') {
             addUserSlide(vm.id, vm.type);
         }
-        // this.router.navigate(['/editor']);
+        $state.go('editor');
     }
 
     function addUserSlide(index, type) {
@@ -107,7 +105,7 @@ function AddSlideController($log, $scope, toaster, slidesService) {
             break;
 
         default:
-            $log.log('something went wrong in adding slide');
+            toaster.pop('error', 'Oops', 'Something went wrong in adding slide');
         }
 
         slidesService.addSlide(slide);
@@ -137,7 +135,6 @@ function AddSlideController($log, $scope, toaster, slidesService) {
         }
 
         if (vm.showModal === false) {
-            $log.log(type);
             vm.modalType = type;
             vm.showModal = true;
         }
@@ -152,7 +149,6 @@ function AddSlideController($log, $scope, toaster, slidesService) {
     }
 
     function confirmModal(type) {
-        closeModal(true);
         vm.type = type;
     }
 

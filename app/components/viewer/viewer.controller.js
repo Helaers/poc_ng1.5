@@ -26,7 +26,6 @@ function ViewerController($log, toaster, slidesService, $location, $scope) {
     });
 
     function activate() {
-        toaster.pop('success', 'title', 'viewer text in box');
         vm.slides = slidesService.getAll();
         vm.totalSlides = vm.slides.length;
         vm.currentSlide = getSlideFromUrl();

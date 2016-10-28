@@ -1,1 +1,97 @@
-<p>this is modal</p>
+<div class="dimmer" ng-if="vm.showModal">
+    <div class="modal-container">
+        <div class="modal_content">
+
+            <div class="modal-header">
+                <span class="modal-header__icon">
+                    <img src="../../assets/images/icn-modal-image.png" class="image" ng-if="vm.modalType==='image'" />
+                    <img src="../../assets/images/icn-modal-video.png" class="image" ng-if="vm.modalType==='video'" />
+                    <img src="../../assets/images/icn-modal-audio.png" class="image" ng-if="vm.modalType==='audio'" />
+                    <img src="../../assets/images/icn-modal-link.png" class="image" ng-if="vm.modalType==='link'" />
+                    <img src="../../assets/images/icn-modal-bingel.png" class="image" ng-if="vm.modalType==='bingel'" />
+                </span>
+                <h2 class="modal-header__title">{{vm.modalHeader}}</h2>
+            </div>
+
+
+            <!-- check modalType to conditionaly render html -->
+            <form>
+                <div ng-if="vm.modalType === 'image'">
+                    <div class="form-group">
+                        <label for="imageUrl" class="form-label bestand">Kies bestand:</label>
+                        <input type="text" name="imageUrl" value="" class="image-file">
+                        <button type="button" class="form-button">Bladeren</button>
+                        <div class="checkbox-container">
+                            <input type="checkbox" name="origineleAfmetingen"><label class="checkbox-input">Originele afmeting</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="onderschrift" class="form-label onderschrift">Onderschrift:</label>
+                        <textarea name="onderschrift" rows="4" cols="50"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url" class="form-label url">URL:</label>
+                        <input type="text" name="url" value="" class="image-url">
+                    </div>
+                </div>
+
+                <div ng-if="vm.modalType === 'video'">
+                    <div class="form-group">
+                        <label for="videoUrl" class="form-label">URL:</label>
+                        <input type="text" name="videoUrl" value="" class="video-url">
+                    </div>
+                </div>
+
+                <div ng-if="vm.modalType === 'audio'">
+                    <div class="form-group">
+                        <label for="audio" class="form-label audio-bestand">Kies audio:</label>
+                        <input type="text" name="bladerenAudio" value="" class="audio-file">
+                        <button type="button" class="form-button">Bladeren</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="audio" class="form-label">Kies achtergrond:</label>
+                        <input type="text" name="bladerenAchtergrond" value="" class="audio-background">
+                        <button type="button" class="form-button">Bladeren</button>
+                    </div>
+                </div>
+
+                <div ng-if="vm.modalType === 'link'">
+                    <p class="modal-copy">Hier kan je een link toevoegen naar bijvoorbeeld een PowerPoint presentatie of een website (max. 4).</p>
+
+                    <div class="form-group">
+                        <label for="hyperlink" class="form-label">Hyperlink:</label>
+                        <input type="text" name="hyperlink" value="" class="link-url">
+                        <button type="button" class="form-button icon"> + </button>
+                    </div>
+                    <div class="form-group indent small">
+                        <label for="buttonTekst" class="form-label">Button tekst:</label>
+                        <input type="text" name="buttonTekst" value="">
+                    </div>
+                </div>
+
+
+                <div ng-if="vm.modalType === 'bingel'">
+                    <p class="modal-copy">Hier kan je een oefening toevoegen, om samen met de leerlingen, uit te voeren aan het bord</p>
+
+                    <div class="form-group">
+                        <label for="Url" class="form-label">URL:</label>
+                        <input type="text" name="Url" value="" class="bingel-url">
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="modal_footer">
+                <div class="modal-content_buttoncontainer">
+                    <button type="button" class="modal-button--ghost" ng-click="vm.close()">Annuleren</button>
+                    <button type="button" class="modal-button" ng-click="vm.add()">Toevoegen</button>
+                </div>
+                <div>
+
+
+                </div> <!-- end modal content -->
+            </div> <!-- end modal container -->
+        </div> <!-- end dimmer -->
