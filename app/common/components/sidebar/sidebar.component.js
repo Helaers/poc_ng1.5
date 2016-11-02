@@ -46,6 +46,7 @@ function sidebarComponentController() {
 // Component
 export const sidebarComponent = {
     bindings: {
+        clearCanvas: '&', //only in template
     },
     template: template,
     controller: sidebarComponentController,

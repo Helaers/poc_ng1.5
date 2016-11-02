@@ -50,12 +50,12 @@
   background-size: 100%;
 }
 
+.sidebar__tools-canvas-clear,
 .sidebar__tools-bordles-editor,
 .sidebar__tools-date {
   cursor: pointer;
   display: block;
   position: absolute;
-  top: 258px;
   left: 0;
   width: 25px;
   height: 31px;
@@ -64,9 +64,11 @@
 .sidebar__tools-bordles-editor {
   top: 258px;
 }
-
 .sidebar__tools-date {
   top: 69px;
+}
+.sidebar__tools-canvas-clear {
+  top: 311px;
 }
 
 .sidebar__tools-date--dropdown {
@@ -75,6 +77,7 @@
   left: -7px;
   width: 157px;
 }
+
 
 
 /* ------------------
