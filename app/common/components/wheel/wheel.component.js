@@ -14,6 +14,7 @@ function wheelComponentController($log, slidesService, $state) {
     vm.expanded = true;
     vm.showPenDropdown = false;
     vm.showAnswersDropdown = false;
+    vm.resetCanvasObj = {};
 
     // functions
     vm.nextSlide = nextSlide;
@@ -52,7 +53,6 @@ function wheelComponentController($log, slidesService, $state) {
             const slide = slidesService.getSlide(vm.current);
 
             if (slide.visible) {
-                // TODO send current slide to VIEWER
                 $state.go('viewer.slide', { id: vm.current });
             } else {
                 nextSlide();
@@ -66,7 +66,6 @@ function wheelComponentController($log, slidesService, $state) {
 
             const slide = slidesService.getSlide(vm.current);
             if (slide.visible) {
-                // TODO send current slide to VIEWER
                 $state.go('viewer.slide', { id: vm.current });
             } else {
                 prevSlide();
@@ -91,6 +90,7 @@ function wheelComponentController($log, slidesService, $state) {
             vm.showPenDropdown = false;
         }
     }
+
 }
 
 // Component

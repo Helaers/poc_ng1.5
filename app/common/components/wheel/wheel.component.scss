@@ -107,3 +107,13 @@
   background: url('../../../assets/images/wheel-answers-dropdown.png');
   background-size: 100%;
 }
+
+.wheel__canvas {
+  background-color: rgba(255,0,0, 0.00);
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  cursor:crosshair;
+}

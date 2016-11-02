@@ -11,5 +11,6 @@
     <a class="wheel__icon-min-max" ng-click="vm.toggleExpandedView()"></a>
 </div>
 
-<canvas ng-if="vm.showPenDropdown" id="canvas" style="background-color: rgba(255,0,0, 0.00); margin: auto; position: absolute; left: 0; right: 0; top: 0; cursor:crosshair" drawing></canvas>
+<canvas ng-if="vm.showPenDropdown" id="canvas" class="wheel__canvas" drawing reset-canvas-obj="vm.resetCanvasObj" ></canvas>
 
+<button ng-click='vm.resetCanvasObj.reset();'>Clear</button>

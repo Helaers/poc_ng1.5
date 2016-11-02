@@ -2,8 +2,22 @@
 export const drawingDirective = function ($log, $window) {
     return {
         restrict: 'A',
+        scope: {
+            resetCanvasObj: '=',
+        },
         link: function (scope, element) {
             const ctx = element[0].getContext('2d');
+
+
+            // http://www.codeproject.com/Tips/863825/Angular-Calling-Directive-Method-from-Controller
+            scope.$watch('resetCanvasObj', (value) => {
+                if (value) {
+                    value.reset = () => {
+                        resetCanvas();
+                    };
+                }
+            });
+
 
             // Size the canvas to fullscreen: (or with with 'width="1200"'on element
             element[0].width = $window.innerWidth;
@@ -15,7 +29,7 @@ export const drawingDirective = function ($log, $window) {
             let lastX;
             let lastY;
 
-            element.bind('mousedown', (event) => {
+            element.on('mousedown', (event) => {
                 if (event.offsetX !== undefined) {
                     lastX = event.offsetX;
                     lastY = event.offsetY;
@@ -30,7 +44,7 @@ export const drawingDirective = function ($log, $window) {
 
                 drawing = true;
             });
-            element.bind('mousemove', (event) => {
+            element.on('mousemove', (event) => {
                 if (drawing) {
                     let currentX;
                     let currentY;
@@ -60,16 +74,15 @@ export const drawingDirective = function ($log, $window) {
                 }
 
             });
-            element.bind('mouseup', () => {
+            element.on('mouseup', () => {
                 // stop drawing
                 drawing = false;
             });
 
             // canvas reset
-            // function reset() {
-            //     // element[0].width = element[0].width;
-            //     ctx.clearRect(0, 0, element[0].width, element[0].height);
-            // }
+            function resetCanvas() {
+                ctx.clearRect(0, 0, element[0].width, element[0].height);
+            }
         },
     };
 };
